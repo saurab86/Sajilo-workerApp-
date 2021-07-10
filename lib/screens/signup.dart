@@ -230,12 +230,14 @@ class _SignUpState extends State<SignUp> {
    String address = addressController.text;
    String mobilenumber = mobilenumberController.text;
    String servicename = _values;
+   String requestStatus = "Pending";
    Map<String, String> requestbyworker = {
      'name': name,
      'email': email,
      'address': address,
      'mobilenumber': mobilenumber,
      'servicename': servicename,
+     'serviceStatus': requestStatus
 
    };
    _ref.push().set(requestbyworker);
