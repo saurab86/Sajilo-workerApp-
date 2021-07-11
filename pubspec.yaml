@@ -74,6 +74,7 @@ flutter:
     - assets/profile.png
     - assets/workerimage.png
     - assets/userhistory.png
+    - assets/feedback.png
  
 
   fonts:

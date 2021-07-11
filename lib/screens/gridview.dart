@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:worker/screens/userfeedback.dart';
 import 'package:worker/screens/workerhistory.dart';
 import 'package:worker/screens/settings.dart';
 import 'package:worker/screens/userhistory.dart';
@@ -6,13 +7,13 @@ import 'package:worker/screens/userhistory.dart';
 var services = [
   "Notification",
   "Your History",
-  "Active Status",
+  "User Feedbacks",
   "Settings",
 ];
 var img = [
   "assets/notification.png",
   "assets/userhistory.png",
-  "assets/map.png",
+  "assets/feedback.png",
   "assets/setting.png",
 ];
 
@@ -55,7 +56,7 @@ class _Gridlist extends State<Gridlist> {
                           builder: (context) => WorkerHistory()));
                 } else if (index == 2) {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Settingsbar()));
+                      MaterialPageRoute(builder: (context) => UserFeedbacks()));
                 } else {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Settingsbar()));

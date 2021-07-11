@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:swipedetector/swipedetector.dart';
 import 'package:worker/screens/gridview.dart';
 import 'package:worker/screens/login.dart';
+import 'package:worker/screens/userfeedback.dart';
 import 'package:worker/screens/userhistory.dart';
 import 'package:worker/screens/workerhistory.dart';
 import 'package:worker/services/auth.dart';
@@ -178,6 +179,17 @@ class CustomDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.history),
             title: Text("Your History",style: TextStyle(fontFamily: 'Newsreader',fontSize: 18),),
+          ),
+          Divider(
+            height: 2,
+            color: Colors.grey,
+          ),
+            ListTile(
+            onTap: () {
+               Navigator.push(context, MaterialPageRoute(builder: (_)=>UserFeedbacks()));
+            },
+            leading: Icon(Icons.feedback),
+            title: Text("User Feedbacks",style: TextStyle(fontFamily: 'Newsreader',fontSize: 18),),
           ),
           Divider(
             height: 2,
