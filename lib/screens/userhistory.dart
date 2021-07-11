@@ -52,6 +52,7 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                ///
                 Row(
                   children: [
                     Icon(
@@ -82,6 +83,8 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                   height: 10.0,
                 ),
 
+
+               ////
                 Row(
                   children: [
                     Icon(
@@ -109,6 +112,8 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                   ],
                 ),
                 SizedBox(height:10),
+
+                ////
                 SafeArea(
                   child: Row(
                     children: [
@@ -141,6 +146,7 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                   height: 10.0,
                 ),
              
+             ////
                 Row(
                   
                     children: [
@@ -175,6 +181,8 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                 SizedBox(
                   height: 10.0,
                 ),
+
+                ///
                 Row(
                   children: [
                     Icon(
@@ -204,6 +212,8 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                 SizedBox(
                   height: 10.0,
                 ),
+
+                ///
                 SafeArea(
                   child: Row(
                     children: [
@@ -225,6 +235,7 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                 SizedBox(
                   height: 10.0,
                 ),
+                ///
                 SafeArea(
                     child: Row(
                   children: [
@@ -262,7 +273,8 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                 SizedBox(
                   height: 10.0,
                 ),
-
+              
+              ///
                 Row(
                   children: [
                     Text(
@@ -280,6 +292,7 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                 ),
                 SizedBox(height: 12,),
 
+               ///
                 SafeArea(
                     child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -302,7 +315,9 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
           ),
         ),
       );
-    } else {
+    }
+    
+     else {
       return SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
