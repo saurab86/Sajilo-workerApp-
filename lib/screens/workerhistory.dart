@@ -131,7 +131,7 @@ Widget _buildBookingItem({Map bookinginfo}) {
           style: TextStyle(fontWeight: FontWeight.w300,fontFamily: 'Newsreader'),
         ),
         leadingWidth: 50,
-        leading: Icon(Icons.notifications_active),
+        automaticallyImplyLeading: true,
         backgroundColor: Colors.teal[300],
       ),
       body: Container(

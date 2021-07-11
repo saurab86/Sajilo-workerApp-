@@ -7,8 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:swipedetector/swipedetector.dart';
 import 'package:worker/screens/gridview.dart';
 import 'package:worker/screens/login.dart';
-import 'package:worker/screens/profile.dart';
-import 'package:worker/screens/settings.dart';
+import 'package:worker/screens/userhistory.dart';
 import 'package:worker/screens/workerhistory.dart';
 import 'package:worker/services/auth.dart';
 import 'package:worker/widgets/logoutbtn.dart';
@@ -156,28 +155,17 @@ class CustomDrawer extends StatelessWidget {
                   )
                 ],
               )),
-          ListTile(
-            onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Profile()));
-            },
-            leading: Icon(Icons.person),
-            title: Text(
-              "Your Profile",
-              style: TextStyle(fontFamily: 'Newsreader',fontSize: 18),
-            ),
-          ),
+
           Divider(
             height: 2,
             color: Colors.grey,
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Settingsbar()));
+                Navigator.of(context).push(UserHistoryAnimation());
             },
-            leading: Icon(Icons.settings),
-            title: Text("Settings",style: TextStyle(fontFamily: 'Newsreader',fontSize: 18),),
+            leading: Icon(Icons.person_add_alt_1_sharp),
+            title: Text("User Requests",style: TextStyle(fontFamily: 'Newsreader',fontSize: 18),),
           ),
           Divider(
             height: 2,
@@ -188,8 +176,8 @@ class CustomDrawer extends StatelessWidget {
               Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => WorkerHistory()));
             },
-            leading: Icon(Icons.notifications),
-            title: Text("Notifications",style: TextStyle(fontFamily: 'Newsreader',fontSize: 18),),
+            leading: Icon(Icons.history),
+            title: Text("Your History",style: TextStyle(fontFamily: 'Newsreader',fontSize: 18),),
           ),
           Divider(
             height: 2,
