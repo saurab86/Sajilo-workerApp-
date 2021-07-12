@@ -2,7 +2,14 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flushbar/flushbar.dart';
+ClipboardData data = ClipboardData(text: '<Text to copy goes here>');
+
+
+
 
 class UserHistoryAnimation extends CupertinoPageRoute {
   UserHistoryAnimation()
@@ -21,6 +28,7 @@ class UserHistoryAnimation extends CupertinoPageRoute {
 
 // ignore: must_be_immutable
 class UserBookingHistory extends StatefulWidget {
+  
   String dbk;
   UserBookingHistory({this.dbk});
   @override
@@ -28,6 +36,8 @@ class UserBookingHistory extends StatefulWidget {
 }
 
 class _UserBookingHistoryState extends State<UserBookingHistory> {
+
+
   Query _ref;
   DatabaseReference reference =
       FirebaseDatabase.instance.reference().child('BookingInfo');
@@ -380,12 +390,31 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                           color: Colors.brown[600]),
                     ),
                     SizedBox(
-                      width: 8,
+                      width: 4,
                     ),
-                    Text(
-                      bookinginfo['mobilenumber'],
-                      style: TextStyle(fontSize: 16.0, fontFamily: 'Newsreader'),
-                    ),
+                    // Text(
+                    //   bookinginfo['mobilenumber'],
+                    //   style: TextStyle(fontSize: 16.0, fontFamily: 'Newsreader'),
+                    // ),
+                    TextButton(onPressed: () {
+                    },
+                    onLongPress: (){
+                      Clipboard.setData(ClipboardData(text: bookinginfo['mobilenumber']));
+                       Flushbar(
+                        icon: Icon(
+                          Icons.done_all_sharp,
+                          size: 32.0,
+                          color: Colors.blue,
+                        ),
+                        title: 'Successfully Copied',
+                        message: 'to clipboard',
+                        flushbarPosition: FlushbarPosition.TOP,
+                        duration: Duration(seconds: 2),
+                        onTap: (_) {},
+                      ).show(context);
+                    }, child: Text(bookinginfo['mobilenumber'],style: TextStyle(color: Colors.black),),),
+                    SizedBox(width: 2,),
+                    Expanded(child: Text('(Long press to copy)',style: TextStyle(color: Colors.white70,fontSize: 14),))
                   ],
                 ),
                 SafeArea(
@@ -554,6 +583,14 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
     }
   }
 
+
+
+
+
+
+
+
+
   _acceptRequestDialogBox({Map bookinginfo}) {
     showDialog(
         barrierDismissible: false,
@@ -626,10 +663,9 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: Text(
-          "",
-          style: TextStyle(fontWeight: FontWeight.w300,fontFamily: 'Newsreader'),
+          "Service Request",
+          style: TextStyle(fontWeight: FontWeight.w300,fontFamily: 'Newsreader',fontSize: 18),
         ),
         leadingWidth: 50,
         leading: Icon(Icons.notifications_active),

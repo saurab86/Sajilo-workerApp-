@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:worker/screens/anyhelp.dart';
 import 'package:worker/screens/userfeedback.dart';
 import 'package:worker/screens/workerhistory.dart';
-import 'package:worker/screens/settings.dart';
 import 'package:worker/screens/userhistory.dart';
 
 var services = [
   "Notification",
   "Your History",
   "User Feedbacks",
-  "Settings",
+  "For help",
 ];
 var img = [
   "assets/notification.png",
   "assets/userhistory.png",
   "assets/feedback.png",
-  "assets/setting.png",
+  "assets/help.png",
 ];
 
 var bookingsroutes = [

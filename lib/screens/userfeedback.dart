@@ -72,9 +72,10 @@ Widget _buildUserFeedbacks({Map userfeedback}) {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
          title: Text(
-          "",
-          style: TextStyle(fontWeight: FontWeight.w300,fontFamily: 'Newsreader'),
+          "User Feedback",
+          style: TextStyle(fontWeight: FontWeight.w300,fontFamily: 'Newsreader',fontSize: 18),
         ),
         leadingWidth: 50,
         automaticallyImplyLeading: true,

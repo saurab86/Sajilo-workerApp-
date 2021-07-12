@@ -126,9 +126,10 @@ Widget _buildBookingItem({Map bookinginfo}) {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
          title: Text(
-          "",
-          style: TextStyle(fontWeight: FontWeight.w300,fontFamily: 'Newsreader'),
+          "Your history",
+          style: TextStyle(fontWeight: FontWeight.w300,fontFamily: 'Newsreader',fontSize: 18),
         ),
         leadingWidth: 50,
         automaticallyImplyLeading: true,
