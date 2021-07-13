@@ -53,7 +53,7 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
       return SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          color: Colors.teal[300],
+          color: Colors.lightBlue[100],
           margin: EdgeInsets.symmetric(vertical: 8.0),
           padding: EdgeInsets.all(8.0),
           height: 360.0,
@@ -116,10 +116,23 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                     SizedBox(
                       width: 8,
                     ),
-                    Text(
-                      bookinginfo['mobilenumber'],
-                      style: TextStyle(fontSize: 16.0, fontFamily: 'Newsreader'),
-                    ),
+                   TextButton(onPressed: () {
+                    },
+                    onLongPress: (){
+                      Clipboard.setData(ClipboardData(text: bookinginfo['mobilenumber']));
+                       Flushbar(
+                        icon: Icon(
+                          Icons.done_all_sharp,
+                          size: 32.0,
+                          color: Colors.blue,
+                        ),
+                        title: 'Successfully Copied',
+                        message: 'to clipboard',
+                        flushbarPosition: FlushbarPosition.TOP,
+                        duration: Duration(seconds: 2),
+                        onTap: (_) {},
+                      ).show(context);
+                    }, child: Text(bookinginfo['mobilenumber'],style: TextStyle(color: Colors.black),),),
                   ],
                 ),
                 SizedBox(height:10),
@@ -415,8 +428,6 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                         onTap: (_) {},
                       ).show(context);
                     }, child: Text(bookinginfo['mobilenumber'],style: TextStyle(color: Colors.black),),),
-                    SizedBox(width: 2,),
-                    Expanded(child: Text('(Long press to copy)',style: TextStyle(color: Colors.white70,fontSize: 14),))
                   ],
                 ),
                 SafeArea(
