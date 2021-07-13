@@ -14,7 +14,7 @@ class SignUp extends StatefulWidget {
   _SignUpState createState() => _SignUpState();
 }
 class _SignUpState extends State<SignUp> {
-   var _dropdownitemlist = ['House Painting', 'Vehicle Reparing', 'Furniture Reparing', 'Television Reparing','Laptop Reparing'];
+   var _dropdownitemlist = ['House Painting', 'Vehicle Reparing', 'Furniture Reparing', 'Television Reparing','Laptop Reparing','Others'];
   var _values="House Painting";
   TextEditingController emailController, mobilenumberController,nameController,addressController;
   DatabaseReference _ref;
