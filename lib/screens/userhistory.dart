@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/cupertino.dart';
@@ -310,6 +311,7 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                     TextButton(
                         onPressed: () {
                           _acceptRequestDialogBox(bookinginfo: bookinginfo);
+                         
                         },
                         child: Text(
                           'Accept Request',
@@ -616,6 +618,7 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
                     onPressed: () {
                       updateRequest(
                           bookinginfo['key'], bookinginfo['BookingStatus']);
+                           _acceptedBy(bookinginfo: bookinginfo);
                     },
                     child: Text(
                       'Yes',
@@ -657,6 +660,17 @@ class _UserBookingHistoryState extends State<UserBookingHistory> {
             fontSize: 16.0));
     // .update(bookinginfo['BookingStatus'].toString('Accepted'))
     // .whenComplete(() => Navigator.pop(context));
+  }
+
+  _acceptedBy({Map bookinginfo}){
+     updateAcceptby(
+                          bookinginfo['key'], bookinginfo['BookingStatus']);
+  }
+
+  updateAcceptby(String dbk, bookinginfo) async{
+     FirebaseAuth auth = FirebaseAuth.instance;
+     
+        await reference.child('$dbk').update( {'AcceptedBy':auth.currentUser.email});
   }
 
   @override
